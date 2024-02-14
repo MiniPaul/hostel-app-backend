@@ -1,0 +1,52 @@
+const mongoose = require("mongoose")
+
+const StudSchema = new mongoose.Schema(
+    {
+        Name:{
+            type:String,
+            required:true
+        },
+        Phno:{
+            type:String,
+            required:true
+        },
+        email:{
+            type:String,
+            required:true
+        },
+        address:{
+            type:String,
+            required:true
+        },
+        father:{
+            type:String,
+            required:true
+        },
+        mother:{
+            type:String,
+            required:true
+        },
+        pcontact:{
+            type:String,
+            required:true
+        },
+        pemail:{
+            type:String,
+            required:true
+        },
+        RoomNo:{
+            type:String,
+            required:true
+        },
+        Course:{
+            type:String,
+            required:true
+        },
+        password:{
+            type:String,
+            required:true
+        }
+    }
+)
+
+module.exports=mongoose.model("hostel",StudSchema)
