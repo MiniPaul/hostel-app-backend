@@ -58,4 +58,12 @@ router.post("/login",async(req,res)=>{
     })
 })
 
+router.post("/delete",async(req,res)=>{
+    let input=req.body
+    let response=await hostelmodel.deleteOne(input)
+    res.json({
+        "status":"success"
+    })
+})
+
 module.exports=router
