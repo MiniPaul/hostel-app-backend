@@ -25,6 +25,21 @@ router.post("/addstud",async(req,res)=>{
     })
 })
 
+router.post("/myprofile", async (req, res) => {
+    try {
+        let input = req.body;
+        let data = await hostelmodel.findOne(input);
+        if (!data) {
+            throw new Error("User not found");
+        }
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        // Return the error message
+        res.status(500).json({ error: error.message });
+    }
+});
+
 
 router.get("/view",async(req,res)=>{
     let data = await hostelmodel.find()
